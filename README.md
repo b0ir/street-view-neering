@@ -4,7 +4,7 @@ This sample is generated from @googlemaps/js-samples located at
 https://github.com/googlemaps/js-samples.
 
 ## Setup
-To run:
+To use this demo, you need to have [Node.js](https://nodejs.org/en/download/) installed, then, to run the project:
 
 ```sh
 npm i
