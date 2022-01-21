@@ -13,7 +13,5 @@ for i in range(1,10):
     subprocess.Popen(['gm', 'convert', imagen, '-crop',strw+'x'+strh+'+0+0', path+'tile_1_0_0.jpg']).wait()
     subprocess.Popen(['gm', 'convert', imagen, '-crop',strw+'x'+strh+ '+0+'+strh, path+'tile_1_0_1.jpg']).wait()
     subprocess.Popen(['gm', 'convert', imagen, '-crop',strw+'x'+strh+'+'+strh+'+0', path+'tile_1_1_0.jpg']).wait()
-    subprocess.Popen(['gm', 'convert', imagen, '-crop',strw+'x'+strh+'+'+strw+'+'+strh, path+'tile_1_1_1.jpg']).wait()#tile zoom 1 ready
+    subprocess.Popen(['gm', 'convert', imagen, '-crop',strw+'x'+strh+'+'+strh+'+'+strh, path+'tile_1_1_1.jpg']).wait()#tile zoom 1 ready
 print('done')
-
-
