@@ -27,7 +27,6 @@ function initPano() {
     document.getElementById("map") as HTMLElement,
     { pano: "reception", visible: true }
   );
-
   panorama.registerPanoProvider(getCustomPanorama);
 }
 

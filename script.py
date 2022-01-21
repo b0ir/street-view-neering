@@ -1,3 +1,4 @@
+#Script to create tiles of 360° panoramas.
 import subprocess
 from PIL import Image
 
