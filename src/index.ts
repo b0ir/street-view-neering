@@ -15,6 +15,7 @@
  */
 /* eslint-disable no-undef, @typescript-eslint/no-unused-vars, no-unused-vars */
 import "./style.css";
+ 
 
 // @ts-nocheck TODO(jpoehnelt) remove when fixed
 
@@ -51,10 +52,8 @@ function getCustomPanoramaTileUrl(
 
 // Return a pano image given the panoID.
 function getCustomPanoramaTileUrl2(pano, zoom, tileX, tileY) {
-  // Note: robust custom panorama methods would require tiled pano data.
-  // Here we're just using a single tile, set to the tile size and equal
-  // to the pano "world" size.
-  return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/360-degree_Panorama_of_the_Southern_Sky_edit.jpg/2560px-360-degree_Panorama_of_the_Southern_Sky_edit.jpg';
+  return "/src/images/panorama1/tile_"+ zoom + "_" + tileX+ "_"+ tileY +".jpg";
+  //return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/360-degree_Panorama_of_the_Southern_Sky_edit.jpg/2560px-360-degree_Panorama_of_the_Southern_Sky_edit.jpg';
 }
  // Return a pano image given the panoID.
  function getCustomPanoramaTileUrl3(pano, zoom, tileX, tileY) {
@@ -78,7 +77,8 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
     return {
       location: {
         pano: "reception",
-        description: "Google Sydney - Reception",
+        shortDescription: 'description', 
+        description: "down_description",
       },
       links: [{
         heading: 0,
@@ -102,8 +102,8 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
     return {
       location: {
         pano: 'canonBooth',
-        shortDescription: 'Canon Booth',              
-        description: 'At The Sharjah Expo Center'
+        shortDescription: 'description',              
+        description: 'down_description'
       },
       links: [{
       heading: 180,
@@ -118,18 +118,18 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
 },
 {
   heading: 0,
-        description: 'Green Planet',
+        description: 'description',
         pano: 'greenPlanet'
         }],
         // The text for the copyright control.
         copyright: 'Imagery (c) 2016 Joy Caasi',
         // The definition of the tiles for this panorama.
         tiles: {
-          tileSize: new google.maps.Size(2560, 778),
-          worldSize: new google.maps.Size(2560, 778),
+          tileSize: new google.maps.Size(2903, 1451),
+          worldSize: new google.maps.Size(5806, 2903),
           // The heading in degrees at the origin of the panorama
           // tile set.
-          centerHeading: 105,
+          centerHeading: 180,
           getTileUrl: getCustomPanoramaTileUrl2
         }
       };
@@ -138,8 +138,8 @@ if (pano === 'caliberOffice'){
       return {
         location: {
           pano: 'caliberOffice',
-    shortDescription: 'Caliber Office',              
-    description: 'Jeffs First Pano'
+    shortDescription: 'description',              
+    description: 'down_description'
         },
         links: [{
         heading: 270,
