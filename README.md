@@ -11,7 +11,7 @@ npm i
 npm start  # development
 npm run build  # production
 ```
- * If "npm start" doesn't work, try "npm i -D --save-exact mini-css-extract-plugin@2.4.5".
+ * If ```npm start``` doesn't work, try ```npm i -D --save-exact mini-css-extract-plugin@2.4.5```.
 
 
 (now runing with API key, but i'll keep this info here)
