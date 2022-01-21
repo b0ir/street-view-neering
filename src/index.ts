@@ -51,7 +51,7 @@ function getCustomPanoramaTileUrl(
 
 // Return a pano image given the panoID.
 function getCustomPanoramaTileUrl2(pano, zoom, tileX, tileY) {
-  return "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/panorama1/tile_"+ 1 + "_" + tileX+ "_"+ tileY +".jpg";
+  return "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/panorama1/tile_"+ zoom + "_" + tileX+ "_"+ tileY +".jpg";
   //return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/360-degree_Panorama_of_the_Southern_Sky_edit.jpg/2560px-360-degree_Panorama_of_the_Southern_Sky_edit.jpg';
 }
  // Return a pano image given the panoID.
