@@ -25,7 +25,7 @@ function initPano() {
   // the custom panorama 'reception' which we check for below.
   const panorama = new google.maps.StreetViewPanorama(
     document.getElementById("map") as HTMLElement,
-    { pano: "reception", visible: true }
+    { pano: "panorama1", visible: true }
   );
   panorama.registerPanoProvider(getCustomPanorama);
 }
@@ -38,12 +38,11 @@ function getCustomPanoramaTileUrl(
   tileY: number
 ): string {
   return (
-    "https://developers.google.com/maps/documentation/javascript/examples/full/images/" +
-    "panoReception1024-" +
-    zoom +
-    "-" +
+    "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/"+pano+"/tile_" +
+    2 +
+    "_" +
     tileX +
-    "-" +
+    "_" +
     tileY +
     ".jpg"
   );
@@ -51,7 +50,7 @@ function getCustomPanoramaTileUrl(
 
 // Return a pano image given the panoID.
 function getCustomPanoramaTileUrl2(pano, zoom, tileX, tileY) {
-  return "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/panorama1/tile_"+ zoom + "_" + tileX+ "_"+ tileY +".jpg";
+  return "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/panorama1/tile_"+ 1 + "_" + tileX+ "_"+ tileY +".jpg";
   //return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/360-degree_Panorama_of_the_Southern_Sky_edit.jpg/2560px-360-degree_Panorama_of_the_Southern_Sky_edit.jpg';
 }
  // Return a pano image given the panoID.
@@ -72,117 +71,115 @@ function getCustomPanoramaTileUrl4(pano, zoom, tileX, tileY) {
 // Construct the appropriate StreetViewPanoramaData given
 // the passed pano IDs.
 function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
-  if (pano === "reception") {
+  if (pano === "panorama1") {
     return {
       location: {
-        pano: "reception",
-        shortDescription: 'description', 
-        description: "down_description",
+        pano: "panorama1",
+        shortDescription: 'description1', 
+        description: "down_description1",
       },
       links: [{
         heading: 0,
-            description: 'Canon Booth',
-            pano: 'canonBooth'
+            description: 'description2',
+            pano: 'panorama2'
       }],
       // The text for the copyright control.
-      copyright: "Imagery (c) 2010 Google",
+      copyright: "Imagery (c) YYYY authorName authorLastName",
       // The definition of the tiles for this panorama.
       tiles: {
-        tileSize: new google.maps.Size(1024, 512),
-        worldSize: new google.maps.Size(2048, 1024),
+        tileSize: new google.maps.Size(2903, 1452),
+        worldSize: new google.maps.Size(5809, 2903),
         // The heading in degrees at the origin of the panorama
         // tile set.
-        centerHeading: 105,
+        centerHeading: 0,
         getTileUrl: getCustomPanoramaTileUrl,
       },
     };
   }
-  if (pano === 'canonBooth'){
+  if (pano === 'panorama2'){
     return {
       location: {
-        pano: 'canonBooth',
-        shortDescription: 'description',              
-        description: 'down_description'
+        pano: 'panorama2',
+        shortDescription: 'shortDescription2',              
+        description: 'description2'
       },
       links: [{
-      heading: 180,
-      description: 'Reception',
-      pano: 'reception'
+        heading: 0,
+        description: 'description3',
+        pano: 'panorama3'
       },
-      {   
-      heading: 90,
-      description: 'Caliber Office',
-      pano: 'caliberOffice'
-      
-},
-{
-  heading: 0,
-        description: 'description',
-        pano: 'greenPlanet'
-        }],
-        // The text for the copyright control.
-        copyright: 'Imagery (c) 2016 Joy Caasi',
-        // The definition of the tiles for this panorama.
-        tiles: {
-          tileSize: new google.maps.Size(2903, 1451),
-          worldSize: new google.maps.Size(5806, 2903),
-          // The heading in degrees at the origin of the panorama
-          // tile set.
-          centerHeading: 180,
-          getTileUrl: getCustomPanoramaTileUrl2
-        }
-      };
-    }
-if (pano === 'caliberOffice'){
-      return {
-        location: {
-          pano: 'caliberOffice',
-    shortDescription: 'description',              
-    description: 'down_description'
-        },
-        links: [{
-        heading: 270,
-        description: 'Canon Booth',
-        pano: 'canonBooth'
-  }],
-        // The text for the copyright control.
-        copyright: 'Imagery (c) 2016 Jeff Barfield',
-        // The definition of the tiles for this panorama.
-        tiles: {
-          tileSize: new google.maps.Size(1024, 346),
-          worldSize: new google.maps.Size(1024, 346),
-          // The heading in degrees at the origin of the panorama
-          // tile set.
-          centerHeading: 245,
-          getTileUrl: getCustomPanoramaTileUrl4
-        }
-      };
-    }
-  else{
-      return {
-        location: {
-          pano: 'greenPlaner',
-    shortDescription: 'Green Planet',              
-    description: 'In The Heart of Dubais Rainforest'
-        },
-        links: [{
+      {
         heading: 180,
-        description: 'Canon Booth',
-        pano: 'canonBooth'
-        }],
-        // The text for the copyright control.
-        copyright: 'Imagery (c) 2016 Joy Caasi',
-        // The definition of the tiles for this panorama.
-        tiles: {
-          tileSize: new google.maps.Size(1600, 729),
-          worldSize: new google.maps.Size(1600, 729),
-          // The heading in degrees at the origin of the panorama
-          // tile set.
-          centerHeading: 0,
-          getTileUrl: getCustomPanoramaTileUrl3
-        }
+        description: 'description1',
+        pano: 'panorama1'
+      }],
+      // The text for the copyright control.
+      copyright: 'Imagery (c) YYYY authorName authorLastName',
+      // The definition of the tiles for this panorama.
+      tiles: {
+        tileSize: new google.maps.Size(3509 , 1755),
+        worldSize: new google.maps.Size(7018, 3509),
+        // The heading in degrees at the origin of the panorama
+        // tile set.
+        centerHeading: 0,
+        getTileUrl: getCustomPanoramaTileUrl
+      }
+    };
+  }
+  if (pano === 'panorama3'){
+    return {
+      location: {
+        pano: 'panorama3',
+        shortDescription: 'description3',              
+        description: 'down_description3'
+      },
+      links: [{
+        heading: 0,
+        description: 'description4',
+        pano: 'panorama4'
+      },{
+        heading: 180,
+        description: 'description2',
+        pano: 'panorama2'
+      }],
+      // The text for the copyright control.
+      copyright: 'Imagery (c) YYYY authorName authorLastName',
+      // The definition of the tiles for this panorama.
+      tiles: {
+        tileSize: new google.maps.Size(3413, 1706),
+        worldSize: new google.maps.Size(6825, 3413),
+        // The heading in degrees at the origin of the panorama
+        // tile set.
+        centerHeading: 0,
+        getTileUrl: getCustomPanoramaTileUrl
+      }
+    };
+  }
+  if(pano == "panorama4"){
+    return {
+      location: {
+        pano: 'panorama4',
+        shortDescription: 'shortDescription4',              
+        description: 'description4'
+      },
+      links: [{
+        heading: 180,
+        description: 'description3',
+        pano: 'panorama3'
+      }],
+      // The text for the copyright control.
+      copyright: 'Imagery (c) YYYY authorName authorLastName',
+      // The definition of the tiles for this panorama.
+      tiles: {
+        tileSize: new google.maps.Size(3360, 1680),
+        worldSize: new google.maps.Size(6720, 3360),
+        // The heading in degrees at the origin of the panorama
+        // tile set.
+        centerHeading: 180,
+        getTileUrl: getCustomPanoramaTileUrl
       }
     }
+  }
   // @ts-ignore TODO(jpoehnelt) fix typings
   return null;
 }

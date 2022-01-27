@@ -8,15 +8,17 @@ for i in range(1,10):
     img = './src/images/panorama'+str(i)+'/panorama'+str(i)+'.jpg'
     im = Image.open(img)
     width, height = im.size
-    strw = str(width/2)
-    strh = str(height/2)
     subprocess.Popen(['cp', img, path+'tile_0_0_0.jpg']).wait()
     #Tile zoom 0 ready
+    #Tile zoom 1:
+    strw = str(width/2)
+    strh = str(height/2)
     subprocess.Popen(['gm', 'convert', img, '-crop',strw+'x'+strh+'+0+0', path+'tile_1_0_0.jpg']).wait()
     subprocess.Popen(['gm', 'convert', img, '-crop',strw+'x'+strh+ '+0+'+strh, path+'tile_1_0_1.jpg']).wait()
     subprocess.Popen(['gm', 'convert', img, '-crop',strw+'x'+strh+'+'+strw+'+0', path+'tile_1_1_0.jpg']).wait()
     subprocess.Popen(['gm', 'convert', img, '-crop',strw+'x'+strh+'+'+strw+'+'+strh, path+'tile_1_1_1.jpg']).wait()
     #Tile zoom 1 ready
+    #Tile zoom 2:
     strw = str(width/4)
     strh = str(height/4)
     strw2 = str(width/2)
