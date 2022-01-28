@@ -39,7 +39,7 @@ function getCustomPanoramaTileUrl(
 ): string {
   return (
     "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/"+pano+"/tile_" +
-    1 +
+    zoom +
     "_" +
     tileX +
     "_" +
@@ -160,7 +160,7 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
       }
     }
   }
-  // @ts-ignore TODO(jpoehnelt) fix typings
+  // @ts-ignore
   return null;
 }
 export { initPano };
