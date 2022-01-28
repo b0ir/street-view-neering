@@ -3,7 +3,7 @@ import subprocess
 from PIL import Image
 
 print('creating tiles...')
-for i in range(1,5):
+for i in range(1,6):
     path = './src/images/panorama'+str(i)+'/'#Path to the image directory
     img = './src/images/panorama'+str(i)+'/panorama'+str(i)+'.jpg'
     im = Image.open(img)

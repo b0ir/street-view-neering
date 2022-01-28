@@ -67,8 +67,8 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
       copyright: "Imagery (c) YYYY authorName authorLastName",
       // The definition of the tiles for this panorama.
       tiles: {
-        tileSize: new google.maps.Size(2903, 1452),
-        worldSize: new google.maps.Size(5809, 2903),
+        tileSize: new google.maps.Size(1280, 640),
+        worldSize: new google.maps.Size(2560, 1280),
         // The heading in degrees at the origin of the panorama
         // tile set.
         centerHeading: 0,
@@ -97,8 +97,8 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
       copyright: 'Imagery (c) YYYY authorName authorLastName',
       // The definition of the tiles for this panorama.
       tiles: {
-        tileSize: new google.maps.Size(3509, 1755),
-        worldSize: new google.maps.Size(7018, 3509),
+        tileSize: new google.maps.Size(1280, 640),
+        worldSize: new google.maps.Size(2560, 1280),
         // The heading in degrees at the origin of the panorama
         // tile set.
         centerHeading: 0,
@@ -126,8 +126,8 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
       copyright: 'Imagery (c) YYYY authorName authorLastName',
       // The definition of the tiles for this panorama.
       tiles: {
-        tileSize: new google.maps.Size(3413, 1706),
-        worldSize: new google.maps.Size(6825, 3413),
+        tileSize: new google.maps.Size(1280, 640),
+        worldSize: new google.maps.Size(2560, 1280),
         // The heading in degrees at the origin of the panorama
         // tile set.
         centerHeading: 0,
@@ -151,11 +151,11 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
       copyright: 'Imagery (c) YYYY authorName authorLastName',
       // The definition of the tiles for this panorama.
       tiles: {
-        tileSize: new google.maps.Size(3360, 1680),
-        worldSize: new google.maps.Size(6720, 3360),
+        tileSize: new google.maps.Size(1280, 640),
+        worldSize: new google.maps.Size(2560, 1280),
         // The heading in degrees at the origin of the panorama
         // tile set.
-        centerHeading: 180,
+        centerHeading: 0,
         getTileUrl: getCustomPanoramaTileUrl
       }
     }
