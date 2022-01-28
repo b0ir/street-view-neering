@@ -39,7 +39,7 @@ function getCustomPanoramaTileUrl(
 ): string {
   return (
     "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/"+pano+"/tile_" +
-    2 +
+    1 +
     "_" +
     tileX +
     "_" +
@@ -47,26 +47,6 @@ function getCustomPanoramaTileUrl(
     ".jpg"
   );
 }
-
-// Return a pano image given the panoID.
-function getCustomPanoramaTileUrl2(pano, zoom, tileX, tileY) {
-  return "https://raw.githubusercontent.com/b0ir/street-view-neering/main/src/images/panorama1/tile_"+ 1 + "_" + tileX+ "_"+ tileY +".jpg";
-  //return 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/360-degree_Panorama_of_the_Southern_Sky_edit.jpg/2560px-360-degree_Panorama_of_the_Southern_Sky_edit.jpg';
-}
- // Return a pano image given the panoID.
- function getCustomPanoramaTileUrl3(pano, zoom, tileX, tileY) {
-  // Note: robust custom panorama methods would require tiled pano data.
-  // Here we're just using a single tile, set to the tile size and equal
-  // to the pano "world" size.
-  return 'https://thumbs.dreamstime.com/b/360-degree-beach-panorama-1217568.jpg';
-}	
-// Return a pano image given the panoID.
-function getCustomPanoramaTileUrl4(pano, zoom, tileX, tileY) {
-  // Note: robust custom panorama methods would require tiled pano data.
-  // Here we're just using a single tile, set to the tile size and equal
-  // to the pano "world" size.
-  return 'https://cloudflare1.360gigapixels.com/pano/artyfax/01215586_IMG_5131_Panorama_landscape360.jpg/equirect_crop_3_1/6.jpg';
-}	 
 
 // Construct the appropriate StreetViewPanoramaData given
 // the passed pano IDs.
@@ -117,7 +97,7 @@ function getCustomPanorama(pano: string): google.maps.StreetViewPanoramaData {
       copyright: 'Imagery (c) YYYY authorName authorLastName',
       // The definition of the tiles for this panorama.
       tiles: {
-        tileSize: new google.maps.Size(3509 , 1755),
+        tileSize: new google.maps.Size(3509, 1755),
         worldSize: new google.maps.Size(7018, 3509),
         // The heading in degrees at the origin of the panorama
         // tile set.
